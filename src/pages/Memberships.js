@@ -1,18 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import MembershipCard from "../components/MembershipCard";
+import {useDispatch, useSelector} from "react-redux";
 
 const Memberships = () => {
-    const nav = useNavigate();
-    const [memberships, setMemberships] = useState([]);
 
-    useEffect(() => {
-        fetch("http://localhost:8080/memberships")
-            .then(res => res.json())
-            .then(data => {
-                setMemberships(data.data);
-            })
-    }, [])
+    const nav = useNavigate();
+    const memberships = useSelector(state => state.memberships);
 
     return (
         <div className="section">
@@ -22,12 +16,11 @@ const Memberships = () => {
                     <p>Here you can manage your membership packages. Note: Make sure you are not deleting or deactivating
                         packages assigned to active users</p>
                 </div>
-                <button onClick={() => nav("/memberships/new")}>+ New membership</button>
+                <button onClick={() => nav("/memberships/new")}>+ New Membership</button>
             </div>
             <div className="d-flex wrap cards">
                 {memberships.map(x => <MembershipCard key={x._id} membership={x} />)}
             </div>
-
         </div>
     );
 };

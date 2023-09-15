@@ -46,11 +46,12 @@ const NewMembership = () => {
         try  {
             const res = await fetch("http://localhost:8080/memberships/", options);
             const data = await res.json;
-            console.log(data);
-            setError('');
-            setSuccessMsg('New Membership Saved')
+            if (!data.error) {
+                setError('');
+                setSuccessMsg('New Membership Saved');
+            }
         } catch (err) {
-            setError('404');
+            setError('Server Error');
         }
     }
 

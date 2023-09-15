@@ -50,6 +50,10 @@ p, b, h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 .p10 {
   padding: 10px;
 }
@@ -70,6 +74,10 @@ p, b, h1, h2, h3, h4, h5, h6 {
   text-align: right;
 }
 
+.text-blue {
+  color: #4e65d9;
+}
+
 button {
   cursor: pointer;
   padding: 10px 20px;
@@ -84,7 +92,7 @@ button {
   }
 }
 
-input, textarea {
+input, textarea, select {
   padding: 10px;
   border: none;
   @include box-shadow;
@@ -175,7 +183,7 @@ input, textarea {
   color: green;
 }
 
-.error-msg {
+.error-msg, .text-red {
   color: red;
 }
 
@@ -214,9 +222,38 @@ input, textarea {
   row-gap: 10px;
 }
 
+.separator {
+  border-bottom: 1px solid gainsboro;
+  margin: 10px 0;
+}
+
+.user-form {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.user-title {
+  display: flex;
+  gap: 5px;
+  color: #a8a5a5;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
 @media only screen and (max-width: 768px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .user-form {
+    grid-template-columns: 1fr;
   }
 }
 

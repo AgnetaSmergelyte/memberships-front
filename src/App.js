@@ -6,8 +6,21 @@ import Memberships from "./pages/Memberships";
 import Users from "./pages/Users";
 import NewMembership from "./pages/NewMembership";
 import NewUser from "./pages/NewUser";
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
+import {setMemberships} from "./features/services";
 
 function App() {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        fetch("http://localhost:8080/memberships")
+            .then(res => res.json())
+            .then(data => dispatch(setMemberships(data.data)))
+            .catch(err => {})
+    }, [])
+
     return (
         <div className="container">
             <Toolbar/>
