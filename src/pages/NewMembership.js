@@ -9,12 +9,6 @@ const NewMembership = () => {
     const [error, setError] = useState('');
     const [successMsg, setSuccessMsg] = useState('');
 
-    useEffect(() => {
-        setTimeout(() => {
-            setSuccessMsg('');
-        }, 1000)
-    }, [successMsg])
-
     async function newMembership() {
         const name = nameRef.current.value;
         if (!name) {
@@ -49,6 +43,9 @@ const NewMembership = () => {
             if (!data.error) {
                 setError('');
                 setSuccessMsg('New Membership Saved');
+                setTimeout(() => {
+                    nav("/memberships")
+                }, 500);
             }
         } catch (err) {
             setError('Server Error');

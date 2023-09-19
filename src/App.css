@@ -191,6 +191,7 @@ input, textarea, select {
 }
 
 .btn-red {
+  padding: 10px 15px;
   background-color: #FAE1E5;
   color: #EA6968;
   transition: 0.3s;
@@ -221,6 +222,14 @@ input, textarea, select {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.icon {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.icon:hover {
+  scale: 1.1;
 }
 
 .user-title {

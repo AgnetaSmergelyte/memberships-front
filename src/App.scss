@@ -206,6 +206,7 @@ input, textarea, select {
 }
 
 .btn-red {
+  padding: 10px 15px;
   background-color: $color-icon;
   color: $color-icon-text;
   transition: 0.3s;
@@ -237,6 +238,15 @@ input, textarea, select {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+.icon {
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    scale: 1.1;
   }
 }
 

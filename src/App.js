@@ -19,7 +19,7 @@ function App() {
             .then(res => res.json())
             .then(data => dispatch(setMemberships(data.data)))
             .catch(err => {})
-    }, [])
+    }, []);
 
     return (
         <div className="container">

@@ -1,6 +1,8 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import {deleteMembership} from "../features/services";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 
 const MembershipCard = ({membership}) => {
 
@@ -29,7 +31,7 @@ const MembershipCard = ({membership}) => {
             <p>{membership.description}</p>
             <div className="separator"></div>
             <div className="d-flex j-end">
-                <button className="btn-red" onClick={deleteService}>Delete</button>
+                <button className="btn-red" onClick={deleteService}><FontAwesomeIcon className="icon" icon={faTrashAlt}/></button>
             </div>
         </div>
     );

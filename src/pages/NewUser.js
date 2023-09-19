@@ -65,9 +65,9 @@ const NewUser = () => {
             if (!data.error) {
                 setError('');
                 setSuccessMsg('New User Saved');
-                firstNameRef.current.value = '';
-                lastNameRef.current.value = '';
-                emailRef.current.value = '';
+                setTimeout(() => {
+                    nav("/users")
+                }, 500);
             }
         } catch (err) {
             setError('Server Error');
