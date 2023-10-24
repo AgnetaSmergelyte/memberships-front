@@ -17,9 +17,7 @@ const Users = () => {
         fetch("http://localhost:8080/users")
             .then(res => res.json())
             .then(data => dispatch(setUsers(data.data)))
-            .catch(err => {
-                console.log('server error')
-            })
+            .catch(err => {})
     }, [])
 
     async function changeSorting() {

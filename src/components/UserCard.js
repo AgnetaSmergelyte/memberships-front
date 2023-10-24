@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 
 const UserCard = ({user}) => {
-
     const memberships = useSelector(state => state.memberships);
     const [usersMembership, setUsersMembership] = useState('');
 

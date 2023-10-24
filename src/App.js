@@ -11,7 +11,6 @@ import {useEffect} from "react";
 import {setMemberships} from "./features/services";
 
 function App() {
-
     const dispatch = useDispatch();
 
     useEffect(() => {

@@ -185,6 +185,7 @@ input, textarea, select {
   background-color: white;
   color: black;
   transition: 0.3s;
+  border: #e8e8e8 solid 1px;
 }
 .btn-light:hover {
   background-color: #e8e8e8;

@@ -5,9 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 
 const MembershipCard = ({membership}) => {
-
     const dispatch = useDispatch();
-
     async function deleteService() {
         const id = membership._id;
         const options = {
@@ -20,11 +18,8 @@ const MembershipCard = ({membership}) => {
             const res = await fetch("http://localhost:8080/memberships/"+id, options)
             const data = await res.json();
             if (!data.error) dispatch(deleteMembership(id));
-        } catch (err) {
-            console.log('Unable to reach server');
-        }
+        } catch (err) {}
     }
-
     return (
         <div className="box text-center">
             <h2>${membership.price} {membership.name}</h2>
