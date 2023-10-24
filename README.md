@@ -20,15 +20,19 @@ Data storage and management is handled using MongoDB, a NoSQL database known for
 
 # Take a look
 
-![image](https://github.com/AgnetaSmergelyte/cao-mongoDB-front/assets/131288227/e4beea47-324a-4ff2-828f-f5aec9952bcd)
+![image](https://github.com/AgnetaSmergelyte/memberships-front/assets/131288227/4f008177-91c5-4ebd-80ec-5f52469462a0)
 
-![image](https://github.com/AgnetaSmergelyte/cao-mongoDB-front/assets/131288227/fe87e75a-0cc0-4e11-b0b9-6e5a64c14c6e)
+![image](https://github.com/AgnetaSmergelyte/memberships-front/assets/131288227/5f556a8e-12db-4206-ba31-2c4887a946bf)
 
-![image](https://github.com/AgnetaSmergelyte/cao-mongoDB-front/assets/131288227/dae36dd9-7a4b-4a7f-bf39-4ad0d7258a67)
+![image](https://github.com/AgnetaSmergelyte/memberships-front/assets/131288227/bb9cd979-263f-4b97-a01d-91f36511bcf6)
 
-![image](https://github.com/AgnetaSmergelyte/cao-mongoDB-front/assets/131288227/89c8761c-34e5-426f-846e-e1d4516a475e)
+![image](https://github.com/AgnetaSmergelyte/memberships-front/assets/131288227/6b3e7462-b7d9-444e-8b14-e8cfe9c3e6f1)
 
-![image](https://github.com/AgnetaSmergelyte/cao-mongoDB-front/assets/131288227/bb8a4abe-1721-4662-ba5d-53eba055079b)
+![image](https://github.com/AgnetaSmergelyte/memberships-front/assets/131288227/c50d7c90-ed7c-41b7-b68e-3fb232e0927c)
+
+
+
+
 
 
 
