@@ -308,6 +308,9 @@ input, textarea, select {
   .cards {
     grid-template-columns: 1fr;
   }
+  .home {
+    flex-direction: column;
+  }
 }
 
 
