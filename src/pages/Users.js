@@ -5,17 +5,27 @@ import {setUsers} from "../features/services";
 import UserCard from "../components/UserCard";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSort} from '@fortawesome/free-solid-svg-icons';
+import loadingImg from "../images/loading.gif";
 
 const Users = () => {
     const nav = useNavigate();
     const dispatch = useDispatch();
     const users = useSelector(state => state.users);
     const [sorting, setSorting] = useState('ASC');
+    const [loading, setLoading] = useState(true);
+    const [errorMsg, setErrorMsg] = useState('');
+
     useEffect(() => {
         fetch("https://memberships-back.onrender.com/users")
             .then(res => res.json())
-            .then(data => dispatch(setUsers(data.data)))
-            .catch(err => {})
+            .then(data => {
+                setLoading(false);
+                dispatch(setUsers(data.data));
+            })
+            .catch(err => {
+                setLoading(false);
+                setErrorMsg('Server is down :(');
+            })
     }, [])
     async function changeSorting() {
         if (sorting === 'ASC') {
@@ -44,6 +54,12 @@ const Users = () => {
                 <b>Sorting by name: <span>{sorting}</span></b>
                 <FontAwesomeIcon className="icon" icon={faSort} onClick={changeSorting}/>
             </div>
+            {loading &&
+                <div className="load-img-wrapper">
+                    <img src={loadingImg} alt="Loading"/>
+                </div>
+            }
+            <h2>{errorMsg}</h2>
             <div className="d-flex wrap cards">
                 {users.map(x => <UserCard key={x._id} user={x}/>)}
             </div>

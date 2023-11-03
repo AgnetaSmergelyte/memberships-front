@@ -284,6 +284,17 @@ input, textarea, select {
   }
 }
 
+.load-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+
+  & > img {
+    width: 100px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
