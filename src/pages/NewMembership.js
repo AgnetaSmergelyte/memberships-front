@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
 const NewMembership = () => {
@@ -8,7 +8,6 @@ const NewMembership = () => {
     const descriptionRef = useRef();
     const [error, setError] = useState('');
     const [successMsg, setSuccessMsg] = useState('');
-
     async function newMembership() {
         const name = nameRef.current.value;
         if (!name) {
@@ -38,7 +37,7 @@ const NewMembership = () => {
             body: JSON.stringify(service)
         }
         try  {
-            const res = await fetch("http://localhost:8080/memberships/", options);
+            const res = await fetch("https://memberships-back.onrender.com/memberships/", options);
             const data = await res.json;
             if (!data.error) {
                 setError('');
@@ -51,7 +50,6 @@ const NewMembership = () => {
             setError('Server Error');
         }
     }
-
     return (
         <div className="section">
             <h2>Create Membership</h2>

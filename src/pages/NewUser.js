@@ -3,42 +3,37 @@ import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
 const NewUser = () => {
-
     const nav = useNavigate();
     const memberships = useSelector(state => state.memberships);
     const [error, setError] = useState('');
     const [successMsg, setSuccessMsg] = useState('');
-
     const firstNameRef = useRef();
     const lastNameRef = useRef();
     const emailRef = useRef();
     const membershipRef = useRef();
-
     useEffect(() => {
         setTimeout(() => {
             setSuccessMsg('');
         }, 1000)
     }, [successMsg])
-
     function validateEmail(mail) {
         return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
     }
-
     async function newUser() {
         setError('');
         const name = firstNameRef.current.value;
         if (!name) {
-            setError('Enter First Name');
+            setError('Enter first name');
             return;
         }
         const surname = lastNameRef.current.value;
         if (!surname) {
-            setError('Enter Last Name');
+            setError('Enter last name');
             return;
         }
         const email = emailRef.current.value;
         if (!validateEmail(email)) {
-            setError('Enter Valid Email');
+            setError('Enter correct email');
             return;
         }
         const service = memberships.find(x => x.name === membershipRef.current.value);
@@ -60,7 +55,7 @@ const NewUser = () => {
             body: JSON.stringify(user)
         }
         try {
-            const res = await fetch("http://localhost:8080/users", options);
+            const res = await fetch("https://memberships-back.onrender.com/users", options);
             const data = await res.json();
             if (!data.error) {
                 setError('');
@@ -73,7 +68,6 @@ const NewUser = () => {
             setError('Server Error');
         }
     }
-
     return (
         <div className="section">
             <h2>Create User</h2>

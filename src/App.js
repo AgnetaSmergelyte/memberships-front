@@ -14,7 +14,7 @@ function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch("http://localhost:8080/memberships")
+        fetch("https://memberships-back.onrender.com/memberships")
             .then(res => res.json())
             .then(data => dispatch(setMemberships(data.data)))
             .catch(err => {})

@@ -118,6 +118,7 @@ input, textarea, select {
   padding: 20px 10px 10px;
   margin: 10px 0 0;
   border-radius: 3px;
+  position: relative;
 }
 
 .toolbar {
@@ -257,6 +258,30 @@ input, textarea, select {
   color: #a8a5a5;
   font-weight: bold;
   margin-bottom: 30px;
+}
+
+.modal-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    height: 100%;
+    width: 100%;
+    @include box-shadow;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {

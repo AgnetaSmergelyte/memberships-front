@@ -7,37 +7,33 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSort} from '@fortawesome/free-solid-svg-icons';
 
 const Users = () => {
-
     const nav = useNavigate();
     const dispatch = useDispatch();
     const users = useSelector(state => state.users);
     const [sorting, setSorting] = useState('ASC');
-
     useEffect(() => {
-        fetch("http://localhost:8080/users")
+        fetch("https://memberships-back.onrender.com/users")
             .then(res => res.json())
             .then(data => dispatch(setUsers(data.data)))
             .catch(err => {})
     }, [])
-
     async function changeSorting() {
         if (sorting === 'ASC') {
             try {
-                const res = await fetch("http://localhost:8080/usersDesc");
+                const res = await fetch("https://memberships-back.onrender.com/usersDesc");
                 const data = await res.json();
                 dispatch(setUsers(data.data));
             } catch (err){}
             setSorting('DESC');
         } else {
             try {
-                const res = await fetch("http://localhost:8080/users");
+                const res = await fetch("https://memberships-back.onrender.com/users");
                 const data = await res.json();
                 dispatch(setUsers(data.data));
             } catch (err){}
             setSorting('ASC');
         }
     }
-
     return (
         <div className="section">
             <div className="d-flex space-btw a-center">

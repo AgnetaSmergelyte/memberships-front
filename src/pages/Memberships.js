@@ -5,18 +5,15 @@ import {useDispatch, useSelector} from "react-redux";
 import {setMemberships} from "../features/services";
 
 const Memberships = () => {
-
     const nav = useNavigate();
     const dispatch = useDispatch();
     const memberships = useSelector(state => state.memberships);
-
     useEffect(() => {
-        fetch("http://localhost:8080/memberships")
+        fetch("https://memberships-back.onrender.com/memberships")
             .then(res => res.json())
             .then(data => dispatch(setMemberships(data.data)))
             .catch(err => {})
     }, []);
-
     return (
         <div className="section">
             <div className="d-flex space-btw a-center g10">
