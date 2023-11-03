@@ -46,7 +46,7 @@ const Users = () => {
     }
     return (
         <div className="section">
-            <div className="d-flex space-btw a-center f-col-mobile">
+            <div className="d-flex space-btw a-center f-col-mobile g10 mb-10">
                 <h2>User Management</h2>
                 <button onClick={() => nav("/users/new")}>+ New User</button>
             </div>
