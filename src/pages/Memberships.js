@@ -26,7 +26,7 @@ const Memberships = () => {
     }, []);
     return (
         <div className="section">
-            <div className="d-flex space-btw a-center g10">
+            <div className="d-flex space-btw a-center g10 f-col-mobile">
                 <div>
                     <h2>Membership Management</h2>
                     <p>Here you can manage your membership packages. Note: Make sure you are not deleting or

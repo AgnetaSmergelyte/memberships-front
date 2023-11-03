@@ -284,6 +284,9 @@ input, textarea, select {
   .user-form {
     grid-template-columns: 1fr;
   }
+  .form {
+    grid-template-columns: 200px 300px;
+  }
 }
 @media only screen and (max-width: 500px) {
   .cards {
@@ -291,6 +294,12 @@ input, textarea, select {
   }
   .home {
     flex-direction: column;
+  }
+  .f-col-mobile {
+    flex-direction: column;
+  }
+  .form {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
